@@ -14,7 +14,5 @@ export default async function handler(req, res) {
     },
   });
   const data = await response.json();
-  console.log(data);
-
-  res.status(200).json({ name: "Callback" });
+  res.redirect(`/dashboard?token=${data.id_token}`);
 }
