@@ -1,3 +1,20 @@
-export default function handler(req, res) {
+export default async function handler(req, res) {
+  const code = req.query.code;
+  const newUrl = `https://idpsesiont.telecom.com.ar/openam/oauth2/realms/convergente/access_token?code=${code}&grant_type=authorization_code&redirect_uri=https://idp-nextjs-test.netlify.app/api/auth/callback/idp`;
+  const encoded = Buffer.from(
+    `${process.env.NEXT_PUBLIC_IDP_CLIENT_ID}:${process.env.NEXT_PUBLIC_IDP_CLIENT_SECRET}`,
+    "binary"
+  ).toString("base64");
+
+  const response = await fetch(newUrl, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: `Basic ${encoded}`,
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+
   res.status(200).json({ name: "Callback" });
 }
