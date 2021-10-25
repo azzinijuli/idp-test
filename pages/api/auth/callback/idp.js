@@ -1,3 +1,3 @@
-export default function IDP() {
-  return <div>Soy un dashboard</div>;
+export default function handler(req, res) {
+  res.status(200).json({ name: "Callback" });
 }
