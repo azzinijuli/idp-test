@@ -14,5 +14,5 @@ export default async function handler(req, res) {
     },
   });
   const data = await response.json();
-  res.redirect(`/index?token=${data.id_token}`);
+  res.redirect(`/dashboard?token=${data.id_token}`);
 }
