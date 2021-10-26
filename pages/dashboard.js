@@ -1,12 +1,3 @@
-export default function Dashboard({ id }) {
-  console.log(id);
+export default function Dashboard() {
   return <div>Redirection success</div>;
-}
-
-export async function getServerSideProps(context) {
-  return {
-    props: {
-      id: context.params,
-    },
-  };
 }
