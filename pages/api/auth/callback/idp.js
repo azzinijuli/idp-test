@@ -1,4 +1,4 @@
-export default async function handler(req, res, id) {
+export default async function handler(req, res) {
   const code = req.query.code;
   const newUrl = `https://idpsesiont.telecom.com.ar/openam/oauth2/realms/convergente/access_token?code=${code}&grant_type=authorization_code&redirect_uri=https://idp-nextjs-test.netlify.app/api/auth/callback/idp`;
   const encoded = Buffer.from(
