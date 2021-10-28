@@ -15,4 +15,21 @@ export default async function handler(req, res) {
   });
   const data = await response.json();
   res.redirect(`/dashboard?token=${data.id_token}`);
+
+  function parseJwt(token) {
+    var base64Url = token.split(".")[1];
+    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    var jsonPayload = decodeURIComponent(
+      Buffer.from(base64)
+        .split("")
+        .map(function (c) {
+          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join("")
+    );
+
+    return JSON.parse(jsonPayload);
+  }
+  parseJwt(data.id_token);
+  console.log(parseJwt());
 }
