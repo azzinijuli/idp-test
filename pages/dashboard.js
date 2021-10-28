@@ -7,7 +7,7 @@ export default function Dashboard({ jwt }) {
   return (
     <>
       <div>Redirection success</div>
-      <div>JWT: ${decoded.sub}</div>
+      <div>Usuario: {decoded.sub}</div>
     </>
   );
 }
