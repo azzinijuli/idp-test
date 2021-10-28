@@ -3,7 +3,7 @@ export default function Dashboard() {
 }
 
 export async function getServerSideProps(context) {
-  console.log(context);
+  console.log(context.query.query.token);
   return {
     props: {
       id: context.params,
