@@ -1,12 +1,12 @@
-export default function Dashboard() {
+export default function Dashboard({ jwt }) {
+  console.log(jwt);
   return <div>Redirection success</div>;
 }
 
 export async function getServerSideProps(context) {
-  console.log(context.query.token);
   return {
     props: {
-      id: context.params,
+      jwt: context.query.token,
     },
   };
 }
