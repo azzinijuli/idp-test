@@ -11,6 +11,7 @@ export default function Home() {
   const state = "doeeHdmVTm67Am1oc3QXHyMQTKcMPoc2MqguEDqxZwE";
   const nonce = "jLJOz5dnXr1L2QzJshw7wI0CA7pQfLQz_wzn4EArA1t";
   const { data: session } = useSession();
+  console.log(session);
   if (session) {
     return (
       <>
@@ -38,8 +39,7 @@ export default function Home() {
             </a>
           </div>
           <div>
-            <button onClick={() => signIn()}>Sign in</button>
-            Login auth
+            <button onClick={() => signIn()}>Login auth</button>
           </div>
         </main>
       </div>
