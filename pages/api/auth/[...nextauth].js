@@ -7,7 +7,7 @@ export default NextAuth({
       name: "Portal Unificado",
       type: "oauth",
       wellKnown:
-        "https://idpsesion.telecom.com.ar/openam/oauth2/realms/convergente/.well-known/openid-configuration",
+        "https://idpsesiont.telecom.com.ar/openam/oauth2/realms/convergente/.well-known/openid-configuration",
       authorization: { params: { scope: "openid email profile" } },
       idToken: true,
       checks: ["pkce", "state"],
