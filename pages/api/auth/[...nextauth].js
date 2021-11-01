@@ -13,7 +13,7 @@ export default NextAuth({
       params: { grant_type: "authorization_code" },
       idToken: true,
       authorizationUrl:
-        "https://idpsesion.telecom.com.ar/openam/oauth2/realms/convergente/authorize",
+        "https://idpsesion.telecom.com.ar/openam/oauth2/realms/convergente/authorize?response_type=code",
       accessTokenUrl:
         "https://idpsesion.telecom.com.ar/openam/oauth2/realms/convergente/access_token",
       requestTokenUrl:
@@ -23,8 +23,6 @@ export default NextAuth({
       profile(profile) {
         return {
           id: profile.id,
-          name: profile.name,
-          email: profile.email,
         };
       },
       clientId: process.env.NEXT_PUBLIC_IDP_CLIENT_ID,

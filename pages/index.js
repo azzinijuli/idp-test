@@ -20,30 +20,28 @@ export default function Home() {
     </Head>;
     session ? (
       <>
-        Signed in as {session.user.email} <br />
+        Signed in as {session.user.email}
         <button onClick={() => signOut()}>Sign out</button>
       </>
     ) : (
       <>
-        <div>Not signed in</div>
-        <main>
-          <div>
-            <a
-              href={`${baseUrl}/${realms}/authorize?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectUri}&scope=openid+profile&state=${state}&nonce=${nonce}`}
-            >
-              Login manual
-            </a>
-          </div>
-          <button
-            onClick={() =>
-              signIn(null, {
-                callbackUrl: "https://idp-nextjs-test.netlify.app/dashboard",
-              })
-            }
+        Not signed in
+        <div>
+          <a
+            href={`${baseUrl}/${realms}/authorize?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectUri}&scope=openid+profile&state=${state}&nonce=${nonce}`}
           >
-            Login auth
-          </button>
-        </main>
+            Login manual
+          </a>
+        </div>
+        <button
+          onClick={() =>
+            signIn(null, {
+              callbackUrl: "https://idp-nextjs-test.netlify.app",
+            })
+          }
+        >
+          Login auth
+        </button>
       </>
     );
   }
