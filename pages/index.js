@@ -37,7 +37,7 @@ export default function Home() {
       </div>
       <button
         onClick={() =>
-          signIn(null, {
+          signIn("idp", {
             callbackUrl: "https://idp-nextjs-test.netlify.app",
           })
         }
