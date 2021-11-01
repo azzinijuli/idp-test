@@ -38,11 +38,8 @@ export default function Home() {
             </a>
           </div>
           <div>
-            <a
-              href={`${baseUrl}/${realms}/authorize?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectUri}&scope=openid+profile&state=${state}&nonce=${nonce}`}
-            >
-              Login auth
-            </a>
+            <button onClick={() => signIn()}>Sign in</button>
+            Login auth
           </div>
         </main>
       </div>
