@@ -13,14 +13,14 @@ export default NextAuth({
       params: { grant_type: "authorization_code" },
       idToken: true,
       authorizationUrl:
-        "https://idpsesiont.telecom.com.ar/openam/oauth2/realms/convergente/authorize",
+        "https://idpsesion.telecom.com.ar/openam/oauth2/realms/convergente/authorize",
       accessTokenUrl:
-        "https://idpsesiont.telecom.com.ar/openam/oauth2/realms/convergente/access_token",
+        "https://idpsesion.telecom.com.ar/openam/oauth2/realms/convergente/access_token",
       requestTokenUrl:
-        "https://idpsesiont.telecom.com.ar/openam/oauth2/realms/convergente/connect/jwk_uri",
+        "https://idpsesion.telecom.com.ar/openam/oauth2/realms/convergente/connect/jwk_uri",
       profileUrl:
-        "https://idpsesiont.telecom.com.ar:443/openam/oauth2/convergente/userinfo",
-      profile(profile, tokens) {
+        "https://idpsesion.telecom.com.ar:443/openam/oauth2/convergente/userinfo",
+      profile(profile) {
         return {
           id: profile.id,
           name: profile.name,
